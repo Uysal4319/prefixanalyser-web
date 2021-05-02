@@ -8,13 +8,13 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: '',
+            user: '+',
             checkList : [
                 {
                     numberInfo :    {
-                        carrierName: 'asdfsd',
-                        countryName: 'dfasd',
-                        phoneType: 'asdfsad'
+                        carrierName: '',
+                        countryName: '',
+                        phoneType: ''
                     },
                 }
             ],
@@ -52,8 +52,9 @@ class HomePage extends Component {
         if (!this.state.loading) {
             return (
                 <div className={'App-header'}>
+                    <label>Enter Number</label>
                     <Typing
-                        placeHolder="User"
+                        placeHolder="+"
                         onChangeText={value => {
                             this.setState({user: value.target.value})
                         }}
@@ -79,9 +80,8 @@ class HomePage extends Component {
                 <div style={{
                     position: 'absolute', left: '50%', top: '50%',
                     transform: 'translate(-50%, -50%)'
-                }}>
+                }}> 
                     <ReactLoading className={'loading'} type="bars" color="gray"/>
-
 
                 </div>
             );
